@@ -1,0 +1,106 @@
+* {
+  margin: 0; padding: 0; box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+body {
+  line-height: 1.6;
+  background: #f4f4f4;
+  color: #333;
+}
+header {
+  background: #333;
+  color: #fff;
+  padding: 2rem 1rem;
+  text-align: center;
+}
+header h1 {
+  font-size: 2.5rem;
+}
+nav {
+  background: #444;
+  text-align: center;
+}
+nav a {
+  color: white;
+  text-decoration: none;
+  margin: 1rem;
+  display: inline-block;
+}
+section {
+  padding: 2rem;
+  max-width: 1000px;
+  margin: auto;
+}
+h2 {
+  margin-bottom: 1rem;
+  border-bottom: 2px solid #333;
+  display: inline-block;
+}
+.skills, .projects {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+}
+.card {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+form input, form textarea {
+  width: 100%;
+  padding: 0.8rem;
+  margin-bottom: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+footer {
+  text-align: center;
+  padding: 1rem;
+  background: #333;
+  color: white;
+}
+
+/* Slider styles */
+.slider {
+  max-width: 800px;
+  margin: 2rem auto;
+  overflow: hidden;
+  border-radius: 10px;
+}
+.slides {
+  display: flex;
+  width: 6400px;
+  animation: slide 32s infinite;
+}
+.slide {
+  position: relative;
+}
+.slide img {
+  width: 800px;
+  height: 400px;
+  object-fit: cover;
+}
+.slide p {
+  position: absolute;
+  bottom: 10px;
+  left: 20px;
+  color: white;
+  background: rgba(0,0,0,0.6);
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  max-width: 90%;
+  font-size: 1rem;
+}
+
+@keyframes slide {
+  0% {transform: translateX(0);}
+  12.5% {transform: translateX(-800px);}
+  25% {transform: translateX(-1600px);}
+  37.5% {transform: translateX(-2400px);}
+  50% {transform: translateX(-3200px);}
+  62.5% {transform: translateX(-4000px);}
+  75% {transform: translateX(-4800px);}
+  87.5% {transform: translateX(-5600px);}
+  100% {transform: translateX(0);}
+}
