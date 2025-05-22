@@ -5,12 +5,139 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Jasper Elen | Portfolio</title>
   <link rel="stylesheet" href="style.css" />
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f9f9f9;
+      color: #333;
+      line-height: 1.6;
+    }
+    header, nav, section, footer {
+      padding: 20px;
+    }
+    header {
+      background-color: #222;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 20px;
+    }
+    header img {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      margin-right: 15px;
+    }
+    nav {
+      position:sticky;
+      top: 0;
+      background-color: #333;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      z-index: 1000;
+    }
+    nav a {
+      color: white;
+      text-decoration: none;
+      padding: 14px 20px;
+      display: inline-block;
+    }
+    nav a:hover {
+      background-color: #555;
+    }
+    .skills, .projects {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+     .cardSkills {
+      background-color: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+    .card {
+      background-color: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+    .slider {
+      position: relative;
+      overflow: hidden;
+    }
+    .slides {
+      display: flex;
+      animation: slide 80s  infinite;
+      width: 800%;
+    }
+    .slide {
+      width: 100%;
+      flex-shrink: 0;
+      padding: 10px;
+      text-align: center;
+    }
+    .slide img {
+      max-width: 100%;
+      border-radius: 10px;
+    }
+    @keyframes slide {
+      0% {transform: translateX(0);}
+      12.5% {transform: translateX(-100%);}
+      25% {transform: translateX(-200%);}
+      37.5% {transform: translateX(-300%);}
+      50% {transform: translateX(-400%);}
+      62.5% {transform: translateX(-500%);}
+      75% {transform: translateX(-600%);}
+      87.5% {transform: translateX(-700%);}
+      100% {transform: translateX(0);}
+    }
+    form input, form textarea {
+      width: 100%;
+      margin-bottom: 10px;
+      padding: 10px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+    form input[type="submit"] {
+      background-color: #333;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+    footer {
+      background-color: #222;
+      color: white;
+      text-align: center;
+    }
+    .contact-icons a {
+      margin-right: 15px;
+    }
+    .certificates .slides {
+      display:inline-flex;
+      animation: slide 50s infinite;
+      height: 600%;
+      width: 50%;
+    }
+  </style>
 </head>
 <body>
 
 <header>
-  <h1>Jasper Elen</h1>
-  <p>IT Instructor | Software Developer</p>
+  <div style="display: flex; align-items: center;">
+    <img src="https://scontent.fmnl30-3.fna.fbcdn.net/v/t1.6435-9/84057964_999125140470569_5570602690632744960_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=6ee11a&_nc_eui2=AeGWfqT7_sAakX_X0bGH0DKJpVVSkFGvKqalVVKQUa8qpqFlChi3O-TYK3sXxtbz1srDR1XMY-ZtwAgx_edGL7bq&_nc_ohc=9UjTldLtqFcQ7kNvwFh_a1G&_nc_oc=AdnSl7-fUYcNwUqIVfqZ50iQ1R-eH8Fq0JgdAO8bJ1vgMCRc5PZ-M8G8eZYxI6fsRVg&_nc_zt=23&_nc_ht=scontent.fmnl30-3.fna&_nc_gid=YDUwPaMSE2oJAtD8LC8pXg&oh=00_AfKDVIIDBHH1nR97DpsgrANFjprxu3O-DSHowl75eXXatQ&oe=6856925B" alt="My Profile" style="width: 150px; height: 150px; border-radius: 50%;">
+<div>
+      <h1>Jasper Elen</h1>
+      <p>IT Instructor | Software Developer</p>
+    </div>
+  </div>
 </header>
 
 <nav>
@@ -18,7 +145,7 @@
   <a href="#skills">Skills</a>
   <a href="#projects">Projects</a>
   <a href="#activities">Activities</a>
-  <a href="#contact">Contact</a>
+  <a href="#contact">Contact Me</a>
 </nav>
 
 <section id="about">
@@ -29,18 +156,18 @@
 <section id="skills">
   <h2>Core Skills</h2>
   <div class="skills">
-    <div class="card"><h3>Software Development</h3><p>Java, C#, Android Studio, Unity Hub</p></div>
-    <div class="card"><h3>Database Management</h3><p>SQL Server, Microsoft Access</p></div>
-    <div class="card"><h3>Teaching & Mentoring</h3><p>IT concepts, real-world examples, hands-on learning</p></div>
-    <div class="card"><h3>Enterprise Software</h3><p>SAP Business One (Implementation & Support)</p></div>
-    <div class="card"><h3>Communication & Time Management</h3><p>Client rapport, effective lesson delivery, project management</p></div>
+    <div class="cardSkills"><h3>Software Development</h3><p>Java, C#, Android Studio, Unity Hub</p></div>
+    <div class="cardSkills"><h3>Database Management</h3><p>SQL Server, Microsoft Access</p></div>
+    <div class="cardSkills"><h3>Teaching & Mentoring</h3><p>IT concepts, real-world examples, hands-on learning</p></div>
+    <div class="cardSkills"><h3>Enterprise Software</h3><p>SAP Business One (Implementation & Support)</p></div>
+    <div class="cardSkills"><h3>Communication & Time Management</h3><p>Client rapport, effective lesson delivery, project management</p></div>
   </div>
 </section>
 
 <section id="projects">
   <h2>Projects</h2>
   <div class="projects">
-    <div class="card"><h3>Inventory Management System</h3><p>Developed for TRIOHMs Corporation with barcode scanning and tool monitoring features.</p></div>
+    <div class="card"><h3>Inventory Management System</h3><p>Developed with barcode scanning and tool monitoring features.</p></div>
     <div class="card"><h3>Cashier Application</h3><p>Windows Forms App with OOP concepts, discount calculations, and change computation.</p></div>
     <div class="card"><h3>Expectation vs Reality App (MAUI)</h3><p>Interactive mobile app built with .NET MAUI showcasing dynamic UI behavior.</p></div>
   </div>
@@ -50,14 +177,26 @@
   <h2>Recent Activities</h2>
   <div class="slider">
     <div class="slides">
-      <div class="slide"><img src="https://via.placeholder.com/800x400?text=Activity+1" alt="Activity 1"><p>Conducted a hands-on workshop on Java programming.</p></div>
-      <div class="slide"><img src="https://via.placeholder.com/800x400?text=Activity+2" alt="Activity 2"><p>Deployed an inventory system for TRIOHMs Corporation.</p></div>
+      <div class="slide"><img src="https://via.placeholder.com/800x400?text=Activity+1" alt="Activity 1"><p>Regional Rebolution 2024.</p></div>
+      <div class="slide"><img src="https://via.placeholder.com/800x400?text=Activity+2" alt="Activity 2"><p>Created Inventory Management System.</p></div>
       <div class="slide"><img src="https://via.placeholder.com/800x400?text=Activity+3" alt="Activity 3"><p>Presented a seminar on cloud technologies.</p></div>
       <div class="slide"><img src="https://via.placeholder.com/800x400?text=Activity+4" alt="Activity 4"><p>Supervised students on mobile app development.</p></div>
       <div class="slide"><img src="https://via.placeholder.com/800x400?text=Activity+5" alt="Activity 5"><p>Collaborated on a game development project using Unity.</p></div>
       <div class="slide"><img src="https://via.placeholder.com/800x400?text=Activity+6" alt="Activity 6"><p>Led database management training sessions.</p></div>
       <div class="slide"><img src="https://via.placeholder.com/800x400?text=Activity+7" alt="Activity 7"><p>Implemented SAP Business One solutions for clients.</p></div>
       <div class="slide"><img src="https://via.placeholder.com/800x400?text=Activity+8" alt="Activity 8"><p>Engaged in technical support and network setup.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="certificates">
+  <h2>Certifications</h2>
+  <div class="slider">
+    <div class="slides">
+      <div class="slide"><img src="https://via.placeholder.com/800x400?text=Certificate+1" alt="Certificate 1"><p>Oracle Java Certified Associate</p></div>
+      <div class="slide"><img src="https://via.placeholder.com/800x400?text=Certificate+2" alt="Certificate 2"><p>Microsoft Certified: Azure Fundamentals</p></div>
+      <div class="slide"><img src="https://via.placeholder.com/800x400?text=Certificate+3" alt="Certificate 3"><p>Google Mobile Web Specialist</p></div>
+      <div class="slide"><img src="https://via.placeholder.com/800x400?text=Certificate+4" alt="Certificate 4"><p>Unity Certified Developer</p></div>
     </div>
   </div>
 </section>
@@ -70,6 +209,12 @@
     <textarea name="message" placeholder="Your Message..." rows="5" required></textarea>
     <input type="submit" value="Send Message" />
   </form>
+  <div class="contact-icons">
+    <p><strong>Phone:</strong> 09214057013</p>
+    <a href="https://www.facebook.com/jasshsz.3" target="_blank"><img src="https://img.icons8.com/ios-filled/30/facebook.png" alt="Facebook" /></a>
+    <a href="https://www.messenger.com/t/jasshsz.3" target="_blank"><img src="https://img.icons8.com/ios-filled/30/facebook-messenger.png" alt="Messenger" /></a>
+    <a href="https://www.linkedin.com/in/jasper-elen/" target="_blank"><img src="https://img.icons8.com/ios-filled/30/linkedin.png" alt="LinkedIn" /></a>
+  </div> 
 </section>
 
 <footer>
